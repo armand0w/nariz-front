@@ -37,6 +37,7 @@ angular.module('nariz-iot.controllers', [])
         };
 
         function ControllerAddDevice($scope, $mdDialog) {
+            $scope.dlgObject = { p_id_home: $rootScope.defaultHome };
             $scope.hide = function () {
                 $mdDialog.hide();
             };
