@@ -1,0 +1,70 @@
+<md-dialog aria-label="DLG Device">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Nuevo Dispositivo</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="img/icons/ic_close_white.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+
+                <md-content layout-padding>
+                    <div>
+                        <form name="deviceForm">
+
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Direccion Mac</label>
+                                    <input ng-model="dlgObject.p_mac">
+                                </md-input-container>
+
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Casa</label>
+                                    <input ng-model="dlgObject.p_id_home">
+                                </md-input-container>
+                            </div>
+
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block">
+                                    <label>Direccion IP</label>
+                                    <input ng-model="dlgObject.p_ip">
+                                </md-input-container>
+
+                                <md-input-container class="md-block">
+                                    <label>Hostname</label>
+                                    <input ng-model="dlgObject.p_hostname">
+                                </md-input-container>
+                            </div>
+
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block">
+                                    <label>Nombre</label>
+                                    <input ng-model="dlgObject.p_name">
+                                </md-input-container>
+
+                                <md-input-container class="md-block">
+                                    <md-switch ng-model="dlgObject.p_connect"><a class="md-accent">{{dlgObject.p_connect ? "Conectado" : "Desonectado"}}</a></md-switch>
+                                </md-input-container>
+                            </div>
+
+                        </form>
+                    </div>
+                </md-content>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button class="md-raised" ng-click="cancel()">
+                Cancelar
+            </md-button>
+            <md-button class="md-raised" ng-click="answer( dlgObject )">
+                Guardar
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
