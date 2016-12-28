@@ -32,11 +32,14 @@
         <md-list flex="">
             <md-subheader class="md-no-sticky">Dispositivos</md-subheader>
             <md-divider></md-divider>
-            <md-list-item class="md-3-line" ng-repeat="item in devices" ng-click="null" aria-label="item">
+            <md-list-item class="md-3-line" ng-repeat="item in devices" ng-click="openDlgEditDevice($event, item.p_mac)" aria-label="item">
                 <div class="md-list-item-text" layout="column">
-                    <h3><a class="md-accent">{{ item.name }}</a></h3>
-                    <p>Conectado: {{ item.isConnect }}</p>
-                    <p>{{ item.mac }}</p>
+                    <h3><a class="md-accent">{{ item.p_name }}</a></h3>
+                    <p ng-if='item.p_connect=="true"' style="color: limegreen">Conectado</p>
+                    <p ng-if='item.p_connect=="false"' style="color: red">Desconectado</p>
+                    <p>{{ item.p_mac }}</p>
+                    <md-icon class="md-secondary" ng-click="delDevice($event, item)" aria-label="Delete"
+                             md-svg-icon="img/icons/ic_delete_black.svg"></md-icon>
                 </div>
                 <md-divider></md-divider>
             </md-list-item>

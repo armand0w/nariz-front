@@ -36,6 +36,7 @@ angular.module('nariz-iot', [
 
     $rootScope.urlDeviceAction = $rootScope.urlApp + '/nariz-iot/device/action';
     $rootScope.urlDeviceList = $rootScope.urlApp + '/nariz-iot/device/list/';
+    $rootScope.urlgetDevice = $rootScope.urlApp + '/nariz-iot/device/';
     $rootScope.dtformat     = 'dd/MM/yy';
     $rootScope.defaultHome = 'HOSHI';
 
